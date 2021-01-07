@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //react-bootstrap
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,19 +20,19 @@ const MainNavigation = () => {
                 }
                 .nav-link {
                     font-weight: bolder;
-                    font-size: 1.2em;
                     font-family: Poppins;
                 }
+
                 .dropdown-menu {
                     border-color: ${theme.mainPrimary};
                     border-radius: 0;
                     background-color: ${theme.tartiaryOne}
                 }
                 .dropdown-item {
-                    color: ${theme.mainPrimary}
+                    color: ${theme.mainTartiary}
                 }
                 .dropdown-item:hover {
-                    background-color: ${theme.mainTartiary};
+                    background-color: ${theme.mainSecondary};
                     color: ${theme.mainPrimary};
                 }
                 .nav-link::after {
@@ -39,20 +40,43 @@ const MainNavigation = () => {
                 }
 
                 .navbar-title {
-                    color: ${theme.mainSecondary};
+                    color: ${theme.mainPrimary};
                     font-family: Poppins;
                     font-weight: bolder;
+                }
+
+                .navbar-motto {
+                    color: ${theme.mainPrimary};
+                    font-family: Poppins;
+                    font-weight: bolder;
+                    font-style: italic;
                 }
 
                 .nav-icon {
                     margin: .7em;
                     cursor: pointer;
                 }
+
+                .nav-dropdown-link {
+                    color: ${theme.mainTartiary};
+                    font-family: Poppins;
+                    font-weight: bolder;
+                }
+
+                .nav-dropdown-link:hover {
+                    text-decoration: none;
+                    color: ${theme.mainPrimary};
+                }
+
+                #nav-brand-container {
+                    width: 40%;
+                }
                 `}
             </style>
 
-            <Navbar collapseOnSelect expand="lg" >
+            <Navbar collapseOnSelect expand="lg" variant="dark" >
             <Navbar.Brand >
+            <Link to="/">
             <img
             src="/custom-logo.png"
             width="100"
@@ -60,46 +84,44 @@ const MainNavigation = () => {
             className="d-inline-block align-top"
             alt="Kagumo High School Logo"
             />  
+            </Link>
             </Navbar.Brand>
-            <h2 className="navbar-title">Kagumo High School</h2>
+            <div id="nav-brand-container">
+                <h3 className="navbar-title">Kagumo High School</h3>
+                <p className="navbar-motto">Struggle For Excellence</p> 
+            </div>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav"> 
                 <Nav as="ul" className="mr-auto">
-                </Nav> 
-                <Nav as="ul">
                 <Nav.Item as="li">
-                <Nav.Link>
-                    Home
-                </Nav.Link>
+                    <Link to="/" className="nav-link">Home</Link>
                 </Nav.Item>
                 <NavDropdown title="About" id="basic-nav-dropdown">
-                    <NavDropdown.Item>History</NavDropdown.Item>
-                    <NavDropdown.Item>Mission And Vision</NavDropdown.Item>
-                    <NavDropdown.Item>School Governance</NavDropdown.Item>
-                    <NavDropdown.Item>Staff Directory</NavDropdown.Item>
-                    <NavDropdown.Item>Alumni Profiles</NavDropdown.Item>
+                    <Link to="/about/history" className="nav-dropdown-link"><NavDropdown.Item>History</NavDropdown.Item></Link>
+                    <NavDropdown.Item><Link to="/about/mission-and-vision" className="nav-dropdown-link">Mission And Vision</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/about/school-governance" className="nav-dropdown-link">School Governance</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/about/staff-directory" className="nav-dropdown-link">Staff Directory</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/about/alumni-profile" className="nav-dropdown-link">Alumni Profile</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item>Join Us</NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/about/join-us" className="nav-dropdown-link">Join Us</Link></NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Item as="li">
-                <Nav.Link>
-                    Contact
-                </Nav.Link>
+                <Link to="/contact" className="nav-link">Contact</Link>
                 </Nav.Item>
                 <Nav.Item as="li">
-                <Nav.Link>
-                    Enrollment
-                </Nav.Link>
+                <Link to="/enrollment" className="nav-link">Enrollment</Link>
                 </Nav.Item>
                 <NavDropdown title="Co-Curricular" id="basic-nav-dropdown">
-                    <NavDropdown.Item>Drama And Music</NavDropdown.Item>
-                    <NavDropdown.Item>Rugby</NavDropdown.Item>
-                    <NavDropdown.Item>Football</NavDropdown.Item>
-                    <NavDropdown.Item>Volley Ball</NavDropdown.Item>
-                    <NavDropdown.Item>Table Tennis</NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/drama-and-music" className="nav-dropdown-link">Drama And Music</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/rugby" className="nav-dropdown-link">Rugby</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/football" className="nav-dropdown-link">Football</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/volleyball" className="nav-dropdown-link">Volleyball</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/table-tennis" className="nav-dropdown-link">Table Tennis</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item>Clubs Listing</NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/co-curricular/clubs-listing" className="nav-dropdown-link">Clubs Listing</Link></NavDropdown.Item>
                 </NavDropdown>
+                </Nav> 
+                <Nav as="ul">
                 <Nav.Item as="li">
                 <a rel="noreferrer" href="https://github.com/MbuthiaWaKihara" target="_blank"><i className="fa fa-facebook nav-icon"/></a>
                 </Nav.Item>

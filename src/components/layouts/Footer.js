@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { Link } from 'react-router-dom';
 import theme from '../../styles/theme';
 
 const Footer = () => {
@@ -8,24 +9,28 @@ const Footer = () => {
     <style type="text/css">
         {`
         .page-footer {
-            background-color: ${theme.mainPrimary};
+            background-color: ${theme.tartiaryOne};
         }
 
         .icon-list {
             display: flex;
             flex-direction: row;
             margin-top: 10px;
-            margin-left: 4em;
+            margin-bottom: 10px;
         }
         
         .icon-container {
-            margin-right: 2em;
-            background-color: ${theme.tartiaryOne};
+            margin-right: .5em;
+            background-color: ${theme.mainTartiary};
             border-radius: 50px;
             width: 2em;
             height: 2em;
             text-align: center;
             vertical-align: middle;
+        }
+
+        .icon-container:hover {
+          background-color: ${theme.mainSecondary}
         }
 
         .fa {
@@ -35,10 +40,10 @@ const Footer = () => {
             top: 4px;
         }
         .footer-title {
-            color: ${theme.tartiaryOne};
+            color: ${theme.mainTartiary};
             font-weight: bolder;
             font-family: Poppins;
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         .footer-copyright {
@@ -46,7 +51,7 @@ const Footer = () => {
         }
 
         .footer-content {
-            color: ${theme.tartiaryOne};
+            color: ${theme.mainTartiary};
         }
 
         .footer-links-container {
@@ -57,16 +62,34 @@ const Footer = () => {
         .footer-link-group {
             margin: 15px;
         }
+
+        .footer-heart {
+          color: red;
+          position: relative;
+          top: -1px;
+        }
+
+        .footer-label-text {
+          color: ${theme.mainPrimary};
+        }
+
+        #footer-motto {
+          color: ${theme.mainTartiary};
+          font-style: italic;
+          font-weight: bolder;
+        }
         `}
     </style>
     <MDBFooter className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="4">
+          <h3 className="footer-title">Kagumo High School</h3>
+          <p id="footer-motto">Struggle For Excellence</p>
           <img
             src="/custom-logo.png"
-            width="80%"
-            height="80%"
+            width="100"
+            height="100"
             className=""
             alt="Kagumo High School Logo"
             />  
@@ -86,25 +109,25 @@ const Footer = () => {
               <h3 className="footer-title">Quick Links</h3>
               <div className="footer-links-container">
                 <div className="footer-link-group">
-                    <a className="footer-link" href="/home">Home</a><br/>
-                    <a className="footer-link" href="/home">History</a><br/>
-                    <a className="footer-link" href="/home">Mission and vision</a><br/>
-                    <a className="footer-link" href="/home">School Governance</a><br/>
-                    <a className="footer-link" href="/home">Staff Directory</a><br/>
+                    <Link to="/" className="footer-link">Home</Link><br/>
+                    <Link to="/about/history" className="footer-link">History</Link><br/>
+                    <Link to="/about/mission-and-vision" className="footer-link">Mission And Vision</Link><br/>
+                    <Link to="/about/school-governance" className="footer-link">School Governance</Link><br/>
+                    <Link to="/about/staff-directory" className="footer-link">Staff Directory</Link><br/>
                 </div>
                 <div className="footer-link-group">
-                    <a className="footer-link" href="/home">Alumni Profiles</a><br/>
-                    <a className="footer-link" href="/home">Join Us</a><br/>
-                    <a className="footer-link" href="/home">Contact</a><br/>
-                    <a className="footer-link" href="/home">Enrollment</a><br/>
-                    <a className="footer-link" href="/home">Drama and music</a><br/>
+                    <Link to="/about/alumni-profile" className="footer-link">Alumni Profile</Link><br/>
+                    <Link to="/about/join-us" className="footer-link">Join Us</Link><br/>
+                    <Link to="/contact" className="footer-link">Contact</Link><br/>
+                    <Link to="/enrollment" className="footer-link">Enrollment</Link><br/>
+                    <Link to="/co-curricular/drama-and-music" className="footer-link">Drama And Music</Link><br/>
                 </div>
                 <div className="footer-link-group">
-                    <a className="footer-link" href="/home">Rugby</a><br/>
-                    <a className="footer-link" href="/home">Football</a><br/>
-                    <a className="footer-link" href="/home">Volley ball</a><br/>
-                    <a className="footer-link" href="/home">Table Tennis</a><br/>
-                    <a className="footer-link" href="/home">Club listing</a><br/>
+                    <Link to="/co-curricular/rugby" className="footer-link">Rugby</Link><br/>
+                    <Link to="/co-curricular/football" className="footer-link">Football</Link><br/>
+                    <Link to="/co-curricular/volleyball" className="footer-link">Volleyball</Link><br/>
+                    <Link to="/co-curricular/table-tennis" className="footer-link">Table Tennis</Link><br/>
+                    <Link to="/co-curricular/clubs-listing" className="footer-link">Club Listing</Link><br/>
                 </div>
               </div>
           </MDBCol>
@@ -112,7 +135,7 @@ const Footer = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://github.com/MbuthiaWaKihara"> Evans Mbuthia </a>
+          <p className="footer-label-text">&copy; {new Date().getFullYear()} Copyright. Made with <i className="fa fa-heart footer-heart"/> by <a href="https://github.com/MbuthiaWaKihara"> Evanson Mbuthia Kihara</a></p>
         </MDBContainer>
       </div>
     </MDBFooter>

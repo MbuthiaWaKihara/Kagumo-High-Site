@@ -1,4 +1,6 @@
 import React from 'react';
+import ScrollToTop from 'react-scroll-to-top';
+// import theme from '../../styles/theme';
 
 //components
 import MainNavigation from './MainNavigation';
@@ -10,6 +12,10 @@ const Layout = ({children}) => {
             <MainNavigation/>
             {children} 
             <Footer/>
+            <ScrollToTop 
+            smooth
+            color="blue"
+            />
         </>
     )
 }
