@@ -97,7 +97,7 @@ const MainNavigation = () => {
                     <Link to="/" className="nav-link">Home</Link>
                 </Nav.Item>
                 <NavDropdown title="About" id="basic-nav-dropdown">
-                    <Link to="/about/history" className="nav-dropdown-link"><NavDropdown.Item>History</NavDropdown.Item></Link>
+                    <NavDropdown.Item><Link to="/about/history" className="nav-dropdown-link">History</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/about/mission-and-vision" className="nav-dropdown-link">Mission And Vision</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/about/school-governance" className="nav-dropdown-link">School Governance</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/about/staff-directory" className="nav-dropdown-link">Staff Directory</Link></NavDropdown.Item>
