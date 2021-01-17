@@ -1,5 +1,7 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import content from '../../utils/content';
+import Content from '../../components/layouts/Content';
 
 const DramaAndMusic = () => {
     React.useEffect(() => {
@@ -16,7 +18,7 @@ const DramaAndMusic = () => {
 
     return (
         <>
-            <h1>Drama And Music Page</h1>
+            <Content {...content.dramaAndMusic} />
         </>
     )
 }

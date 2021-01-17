@@ -1,5 +1,14 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import { alumniProfiles } from '../../utils/app-data';
+
+//components
+import Alumni from '../../components/Alumni';
+
+//bootstrap
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const AlumniProfile = () => {
     React.useEffect(() => {
@@ -17,7 +26,23 @@ const AlumniProfile = () => {
 
     return (
         <>
-            <h1>Alumni Profile Page</h1>
+            <Container>
+                <Row>
+                    <Col>
+                    <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flexWrap: 'wrap',
+                    }}
+                    >
+                        {alumniProfiles.map(profile => (
+                            <Alumni profile={profile} />
+                        ))}
+                    </div>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }

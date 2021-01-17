@@ -22,7 +22,7 @@ import ClubsListing from '../../images/club-listing.jpg';
 //components
 import MainNavigation from './MainNavigation';
 import Footer from './Footer';
-import LayoutImage from '../LayoutImage';
+import LayoutImage from './LayoutImage';
 
 const Layout = ({children}) => {
     const location = useLocation();

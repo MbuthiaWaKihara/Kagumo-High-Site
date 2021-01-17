@@ -17,6 +17,7 @@ const Footer = () => {
             flex-direction: row;
             margin-top: 10px;
             margin-bottom: 10px;
+            margin-left: 60px;
         }
         
         .icon-container {
@@ -43,7 +44,7 @@ const Footer = () => {
             color: ${theme.mainTartiary};
             font-weight: bolder;
             font-family: Poppins;
-            font-size: 1.5em;
+            font-size: 2em;
         }
 
         .footer-copyright {
@@ -52,6 +53,9 @@ const Footer = () => {
 
         .footer-content {
             color: ${theme.mainTartiary};
+            font-weight: bolder;
+            font-family: Poppins;
+            font-size: 1em;
         }
 
         .footer-links-container {
@@ -61,6 +65,17 @@ const Footer = () => {
 
         .footer-link-group {
             margin: 15px;
+        }
+
+        .footer-link {
+          font-family: Poppins;
+          font-size: 1em;
+          text-decoration: underline;
+          color: ${theme.mainTartiary};
+        }
+
+        .footer-link:visited {
+          color: ${theme.mainTartiary};
         }
 
         .footer-heart {
@@ -77,10 +92,14 @@ const Footer = () => {
           color: ${theme.mainTartiary};
           font-style: italic;
           font-weight: bolder;
+          font-size: 1em;
+        }
+        .footer-wrapper {
+        
         }
         `}
     </style>
-    <MDBFooter className="font-small pt-4 mt-4">
+    <MDBFooter className="font-small pt-4 mt-4 footer-wrapper">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="4">
@@ -88,8 +107,8 @@ const Footer = () => {
           <p id="footer-motto">Struggle For Excellence</p>
           <img
             src="/custom-logo.png"
-            width="100"
-            height="100"
+            width="200"
+            height="200"
             className=""
             alt="Kagumo High School Logo"
             />  
@@ -122,13 +141,13 @@ const Footer = () => {
                     <Link to="/enrollment" className="footer-link">Enrollment</Link><br/>
                     <Link to="/co-curricular/drama-and-music" className="footer-link">Drama And Music</Link><br/>
                 </div>
-                <div className="footer-link-group">
+                {/* <div className="footer-link-group">
                     <Link to="/co-curricular/rugby" className="footer-link">Rugby</Link><br/>
                     <Link to="/co-curricular/football" className="footer-link">Football</Link><br/>
                     <Link to="/co-curricular/volleyball" className="footer-link">Volleyball</Link><br/>
                     <Link to="/co-curricular/table-tennis" className="footer-link">Table Tennis</Link><br/>
                     <Link to="/co-curricular/clubs-listing" className="footer-link">Club Listing</Link><br/>
-                </div>
+                </div> */}
               </div>
           </MDBCol>
         </MDBRow>

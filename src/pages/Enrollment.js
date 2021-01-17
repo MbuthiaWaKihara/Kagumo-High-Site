@@ -1,4 +1,11 @@
 import React from 'react';
+import theme from '../styles/theme';
+import EnrollmentForm from '../components/EnrollmentForm';
+
+//bootstrap
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Enrollment = () => {
     React.useEffect(() => {
@@ -7,7 +14,24 @@ const Enrollment = () => {
 
     return (
         <>
-            <h1>Enrollment Page</h1>
+            <Container>
+                <Row>
+                    <Col>
+                        <h3
+                        style={{
+                            color: theme.mainSecondary,
+                            marginTop: '5%',
+                            width: '100%',
+                            textAlign: 'center',
+                            fontWeight: 'bolder',
+                        }}
+                        >
+                            Open House for Prospective Students Registration Form
+                        </h3>
+                    </Col>
+                </Row>
+                <EnrollmentForm />
+            </Container>
         </>
     )
 }

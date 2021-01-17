@@ -1,5 +1,7 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import Content from '../../components/layouts/Content';
+import content from '../../utils/content';
 
 const Football = () => {
     React.useEffect(() => {
@@ -16,7 +18,7 @@ const Football = () => {
 
     return (
         <>
-            <h1>Football Page</h1>
+           <Content {...content.football} />
         </>
     )
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import Content from '../../components/layouts/Content';
+import content from '../../utils/content';
 
 const Rugby = () => {
     React.useEffect(() => {
@@ -16,7 +18,7 @@ const Rugby = () => {
 
     return (
         <>
-            <h1>Rugby Page</h1>
+            <Content {...content.rugby} />
         </>
     )
 }

@@ -1,5 +1,9 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import content from '../../utils/content';
+
+//components 
+import Content from '../../components/layouts/Content';
 
 const History = () => {
     React.useEffect(() => {
@@ -16,7 +20,7 @@ const History = () => {
 
     return (
         <>
-            <h1>History Page</h1>
+           <Content {...content.history} />
         </>
     )
 }

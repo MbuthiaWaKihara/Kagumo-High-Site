@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 //react-bootstrap
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,8 +9,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 //styles
 import theme from '../../styles/theme';
 
+//components
+import NavIndicator from '../styled/NavIndicator';
+
 
 const MainNavigation = () => {
+    const location = useLocation();
+
+    const shouldShowIndicator = targetUrl => {
+        if(targetUrl === "/about" || targetUrl === '/co-curricular') {
+            if(location.pathname.startsWith(targetUrl)) {
+                return <NavIndicator />
+            }
+        }
+
+        if(location.pathname === targetUrl) {
+            return <NavIndicator />
+        }
+    }
     return (
         <>
             <style type="text/css">
@@ -76,7 +92,7 @@ const MainNavigation = () => {
 
             <Navbar collapseOnSelect expand="lg" variant="dark" >
             <Navbar.Brand >
-            <Link to="/">
+            <Link to="/about/history">
             <img
             src="/custom-logo.png"
             width="100"
@@ -95,31 +111,33 @@ const MainNavigation = () => {
                 <Nav as="ul" className="mr-auto">
                 <Nav.Item as="li">
                     <Link to="/" className="nav-link">Home</Link>
+                    {shouldShowIndicator("/")}
                 </Nav.Item>
+                <Nav.Item as="li">
                 <NavDropdown title="About" id="basic-nav-dropdown">
                     <NavDropdown.Item><Link to="/about/history" className="nav-dropdown-link">History</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/about/mission-and-vision" className="nav-dropdown-link">Mission And Vision</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/about/school-governance" className="nav-dropdown-link">School Governance</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/about/staff-directory" className="nav-dropdown-link">Staff Directory</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/about/alumni-profile" className="nav-dropdown-link">Alumni Profile</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item><Link to="/about/join-us" className="nav-dropdown-link">Join Us</Link></NavDropdown.Item>
                 </NavDropdown>
+                {shouldShowIndicator("/about")}
+                </Nav.Item>
                 <Nav.Item as="li">
                 <Link to="/contact" className="nav-link">Contact</Link>
+                {shouldShowIndicator("/contact")}
                 </Nav.Item>
                 <Nav.Item as="li">
                 <Link to="/enrollment" className="nav-link">Enrollment</Link>
+                {shouldShowIndicator("/enrollment")}
                 </Nav.Item>
+                <Nav.Item as="li">
                 <NavDropdown title="Co-Curricular" id="basic-nav-dropdown">
                     <NavDropdown.Item><Link to="/co-curricular/drama-and-music" className="nav-dropdown-link">Drama And Music</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/co-curricular/rugby" className="nav-dropdown-link">Rugby</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to="/co-curricular/football" className="nav-dropdown-link">Football</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/co-curricular/volleyball" className="nav-dropdown-link">Volleyball</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/co-curricular/table-tennis" className="nav-dropdown-link">Table Tennis</Link></NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item><Link to="/co-curricular/clubs-listing" className="nav-dropdown-link">Clubs Listing</Link></NavDropdown.Item>
                 </NavDropdown>
+                {shouldShowIndicator("/co-curricular")}
+                </Nav.Item>
                 </Nav> 
                 <Nav as="ul">
                 <Nav.Item as="li">

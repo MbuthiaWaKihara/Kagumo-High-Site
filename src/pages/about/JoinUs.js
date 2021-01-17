@@ -1,6 +1,11 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
 
+//bootstrap
+import Container from 'react-bootstrap/Container';
+
+import EnrollmentForm from '../../components/EnrollmentForm';
+
 const JoinUs = () => {
     React.useEffect(() => {
         document.title = "KHS | Join Us";
@@ -16,7 +21,10 @@ const JoinUs = () => {
 
     return (
         <>
-            <h1>Join Us Page</h1>
+            <Container>
+            <EnrollmentForm />
+            </Container>
+
         </>
     )
 }

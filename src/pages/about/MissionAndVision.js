@@ -1,5 +1,11 @@
 import React from 'react';
 import CustomLogo from '../../images/custom-logo.png';
+import MissionAndVisionSwitch from '../../components/MissionAndVisonSwitch';
+
+//bootstrap
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const MissionAndVision = () => {
     React.useEffect(() => {
@@ -16,7 +22,18 @@ const MissionAndVision = () => {
 
     return (
         <>
-            <h1>Mission And Vision Page</h1>
+            <style type="text/css">{`
+                .container {
+                    padding-top: 50px;
+                }
+            `}</style>
+            <Container>
+                <Row>
+                    <Col>
+                    <MissionAndVisionSwitch />
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }
