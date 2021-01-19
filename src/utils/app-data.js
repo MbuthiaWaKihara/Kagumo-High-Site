@@ -13,7 +13,7 @@ export const schoolEvents = [
     {
         day: '20',
         monthAndYear: 'Jan 2021',
-        title: 'Form Threes Academic Clinic',
+        title: 'Academic Clinic',
     },
     {
         day: '03',
