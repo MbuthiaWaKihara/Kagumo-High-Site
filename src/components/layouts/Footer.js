@@ -43,7 +43,6 @@ const Footer = () => {
         .footer-title {
             color: ${theme.mainTartiary};
             font-weight: bolder;
-            font-family: Poppins;
             font-size: 2em;
         }
 
@@ -54,7 +53,6 @@ const Footer = () => {
         .footer-content {
             color: ${theme.mainTartiary};
             font-weight: bolder;
-            font-family: Poppins;
             font-size: 1em;
         }
 
@@ -68,7 +66,6 @@ const Footer = () => {
         }
 
         .footer-link {
-          font-family: Poppins;
           font-size: 1em;
           text-decoration: underline;
           color: ${theme.mainTartiary};
