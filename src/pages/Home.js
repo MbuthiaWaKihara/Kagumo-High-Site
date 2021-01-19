@@ -44,7 +44,8 @@ const Home = () => {
                     color: ${theme.mainPrimary};
                     border-radius: 50px;
                     width: 20%;
-                    height: 20%;
+                    height: 15%;
+                    font-weight: bolder;
                 }
 
                 .carousel-readmore:hover {
