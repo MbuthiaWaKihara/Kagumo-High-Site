@@ -110,32 +110,36 @@ const MainNavigation = () => {
             <Navbar.Collapse id="responsive-navbar-nav"> 
                 <Nav as="ul" className="mr-auto">
                 <Nav.Item as="li">
-                    <Link to="/" className="nav-link">Home</Link>
+                    <Nav.Link eventKey="1"><Link to="/" className="nav-link">Home</Link></Nav.Link>
                     {shouldShowIndicator("/")}
                 </Nav.Item>
                 <Nav.Item as="li">
+                <Nav.Link>
                 <NavDropdown title="About" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to="/about/history" className="nav-dropdown-link">History</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/about/alumni-profile" className="nav-dropdown-link">Alumni Profile</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link eventKey="2"><Link to="/about/history" className="nav-dropdown-link">History</Link></Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Item eventKey="3"><Link to="/about/alumni-profile" className="nav-dropdown-link">Alumni Profile</Link></Nav.Item></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item><Link to="/about/join-us" className="nav-dropdown-link">Join Us</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Item eventKey="4"><Link to="/about/join-us" className="nav-dropdown-link">Join Us</Link></Nav.Item></NavDropdown.Item>
                 </NavDropdown>
+                </Nav.Link>
                 {shouldShowIndicator("/about")}
                 </Nav.Item>
                 <Nav.Item as="li">
-                <Link to="/contact" className="nav-link">Contact</Link>
+                <Nav.Link eventKey="5"><Link to="/contact" className="nav-link">Contact</Link></Nav.Link>
                 {shouldShowIndicator("/contact")}
                 </Nav.Item>
                 <Nav.Item as="li">
-                <Link to="/enrollment" className="nav-link">Enrollment</Link>
+                <Nav.Item><Nav.Link eventKey="9"><Link to="/enrollment" className="nav-link">Enrollment</Link></Nav.Link></Nav.Item>
                 {shouldShowIndicator("/enrollment")}
                 </Nav.Item>
                 <Nav.Item as="li">
+                <Nav.Link>
                 <NavDropdown title="Co-Curricular" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to="/co-curricular/drama-and-music" className="nav-dropdown-link">Drama And Music</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/co-curricular/rugby" className="nav-dropdown-link">Rugby</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to="/co-curricular/football" className="nav-dropdown-link">Football</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link eventKey="6"><Link to="/co-curricular/drama-and-music" className="nav-dropdown-link">Drama And Music</Link></Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link eventKey="7"><Link to="/co-curricular/rugby" className="nav-dropdown-link">Rugby</Link></Nav.Link></NavDropdown.Item>
+                    <NavDropdown.Item><Nav.Link eventKey="8"><Link to="/co-curricular/football" className="nav-dropdown-link">Football</Link></Nav.Link></NavDropdown.Item>
                 </NavDropdown>
+                </Nav.Link>
                 {shouldShowIndicator("/co-curricular")}
                 </Nav.Item>
                 </Nav> 
