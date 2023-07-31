@@ -118,7 +118,7 @@ const Footer = () => {
           <MDBCol md="4">
               <h3 className="footer-title">Contact Us</h3>
               <p className="footer-content">P.O Box 69840 Kiganjo</p>
-              <p className="footer-content">Call +254</p>
+              <p className="footer-content">Call +254 [insert Kagumo High contact]</p>
               <p className="footer-content">mail us: kagumohigh@gmail.com</p>
           </MDBCol>
           <MDBCol md="4">
