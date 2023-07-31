@@ -107,7 +107,7 @@ const ContactForm = () => {
               <MDBBtn tag="a" floating color="blue" className="accent-1">
                 <MDBIcon icon="phone" />
               </MDBBtn>
-              <p>+254 [insert Kagumo High contact]</p>
+              <p>+254 [ insert Kagumo High contact ]</p>
               <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
             </MDBCol>
             <MDBCol md="4">
